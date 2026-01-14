@@ -1,0 +1,41 @@
+:root {
+  --bg: #f6f9fc; /* light, optimistic background */
+  --card: #ffffff; /* card background */
+  --accent: #2563eb; /* professional blue */
+  --accent-2: #06b6d4; /* fresh teal */
+  --muted: #6b7280; /* neutral gray */
+  --text: #0f1724; /* dark text */
+  --surface-shadow: rgba(16,24,40,0.06);
+}
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+.wrapper { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:48px 20px; }
+.card { width:100%; max-width:520px; background:var(--card); border-radius:14px; padding:36px; box-shadow: 0 8px 26px var(--surface-shadow); border: 1px solid rgba(15,23,36,0.04); }
+h1 { margin:0 0 8px 0; font-size:1.6rem; color:var(--text); }
+.subtitle { margin:0 0 22px 0; color:var(--muted); font-size:0.98rem; }
+.field { display:flex; flex-direction:column; gap:8px; margin-bottom:16px; }
+label { font-size:0.95rem; color:var(--muted); }
+input[type="text"], input[type="email"], input[type="password"] { background: #f8fafc; border:1px solid rgba(15,23,36,0.06); padding:12px 14px; border-radius:10px; color:var(--text); font-size:1rem; transition: box-shadow 160ms ease, transform 160ms ease, border-color 160ms ease; }
+input::placeholder { color: rgba(15,23,36,0.35); }
+input:focus { outline:none; box-shadow: 0 8px 20px rgba(37,99,235,0.08); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+.error { color:#b91c1c; font-size:0.92rem; min-height:18px; }
+.success { color: var(--accent); margin-top:12px; font-weight:600; min-height:20px; }
+.actions { display:flex; justify-content:flex-end; }
+.btn { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; padding:12px 20px; border-radius:10px; border:none; font-weight:700; cursor:pointer; box-shadow: 0 6px 26px rgba(37,99,235,0.12); transition: transform 160ms ease, box-shadow 160ms ease; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(37,99,235,0.16); }
+@media (max-width:520px) {
+  .card { padding:20px; border-radius:12px; }
+  .actions { justify-content:center; }
+}
+/* Accessibility focus */
+input:focus, .btn:focus { outline: 3px solid rgba(37,99,235,0.12); outline-offset: 4px; }
+/* Small visual polish */
+label { letter-spacing: 0.1px; }
+button:active { transform: translateY(-1px); }
